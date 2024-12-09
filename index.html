@@ -7,56 +7,157 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+            margin: 0;
+            overflow-y: scroll; /* Allow vertical scrolling */
+            background: url('https://raw.githubusercontent.com/D3Ext/aesthetic-wallpapers/main/images/ink_wave.png') no-repeat center center fixed;
             background-size: cover;
             color: white;
+        }
+        .intro {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 20px;
+            flex-direction: column;
+            position: relative; /* Ensure particles are visible */
+            z-index: 1; /* Ensures particles are behind intro content */
+        }
+        .intro h1 {
+            font-size: 5em;
+            margin: 0;
+            color: white; /* Ensure the text is white */
+        }
+        .intro p {
+            font-size: 2em;
+            margin: 0;
+        }
+        .social-icons img {
+            width: 40px;
+            margin: 20px 10px;
+            cursor: pointer;
         }
         .container {
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
+            padding: 40px;
             border-radius: 10px;
-            margin: 20px auto;
-            max-width: 800px;
+            margin: 40px auto;
+            max-width: 900px;
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
         h1, h2 {
-            color: #ff9900;
+            color: #00a2e3;
+            font-size: 2em;
         }
         .icons img {
             width: 50px;
             margin: 10px;
         }
+        .three-columns {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+        .column {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            margin: 10px;
+        }
+        .tech img {
+            width: 50px;
+            margin: 5px;
+        }
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure particles are behind everything */
+        }
     </style>
 </head>
 <body>
+    <div class="particles-container">
+        <canvas id="particles"></canvas>
+    </div>
+    <div class="intro">
+        <h1>Kyle Shipley</h1>
+        <p>Maryville University Data Science Graduate 2023</p>
+        <div class="social-icons">
+            <a href="mailto:Shipley.s.kyle@gmail.com"><img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email"></a>
+            <a href="https://www.linkedin.com/in/kyle-shipley-979b9a17a/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+            <a href="https://github.com/KShipley1" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+        </div>
+    </div>
     <div class="container">
         <div class="section">
             <h1>About Me</h1>
-            <p>I am a Business Ops Analyst III at Dish Network, focusing on predictive analytics for the Customer Experience Organization on the Workforce Management team. I graduated from the University of Colorado, Boulder with a focus on Business Analytics and Security. I also hold a Bachelor's degree in Accounting from Chestnut Hill College and an MBA in Finance from Philadelphia University. My previous work experience includes roles at SEI Investments Company and Accenture, where I gained extensive experience in analytics and business operations.</p>
+            <p>I am a Technical Product Owner with extensive experience in managing data-driven solutions, optimizing business operations, and enhancing strategic insights. My expertise spans across Python, SQL, and data visualization tools like Power BI and Tableau. I am passionate about leveraging data science to drive impactful decisions and improve operational efficiency.</p>
         </div>
-        <div class="section">
-            <h1>Resume</h1>
-            <p><a href="https://github.com/yourusername/yourresume.pdf" target="_blank">Download my resume</a></p>
-        </div>
-        <div class="section">
-            <h1>Languages</h1>
-            <p>Python, MySQL, R</p>
-            <p>Proficient with Python libraries such as Scikit-Learn, Pandas, NumPy, Seaborn, and Matplotlib for machine learning and data analysis.</p>
-        </div>
-        <div class="section">
-            <h1>Tools</h1>
-            <div class="icons">
-                <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="Python">
-                <img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" alt="MySQL">
-                <img src="https://cdn-icons-png.flaticon.com/512/919/919842.png" alt="R">
-                <!-- Add more icons as needed -->
+        <div class="section three-columns">
+            <div class="column">
+                <h2>Resume</h2>
+                <img src="https://img.icons8.com/office/80/000000/open-resume.png" alt="Resume Icon">
+                <p>Here I have added a link to my resume which is hosted on my GitHub (downloadable as a PDF).</p>
+                <a href="https://github.com/yourusername/yourresume.pdf" target="_blank">Link to resume</a>
             </div>
-            <p>Tools I've used include Git, Tableau, AWS, MySQL Workbench, Jupyter Notebook, Google Colab, Hadoop, Apache Spark, Google Cloud Platform, Kali Linux, and R Studio. Currently studying for the AWS Cloud Practitioner exam and planning to pursue the Certified Machine Learning – Specialty certification.</p>
+            <div class="column">
+                <h2>Languages</h2>
+                <div class="tech">
+                    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python">
+                    <img src="https://img.icons8.com/ultraviolet/40/000000/mysql.png" alt="MySQL">
+                    <img src="https://img.icons8.com/ultraviolet/40/000000/xbox-r.png" alt="R">
+                </div>
+                <p>Proficient in Python, SQL, and R. Experienced in using Python libraries like NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, and TensorFlow for various projects.</p>
+            </div>
+            <div class="column">
+                <h2>Tools</h2>
+                <div class="tech">
+                    <img src="https://img.icons8.com/nolan/64/google-cloud-platform.png" alt="Google Cloud Platform">
+                    <img src="https://img.icons8.com/nolan/64/amazon-s3.png" alt="AWS">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/git.png" alt="Git">
+                </div>
+                <p>Tools I have used include Git, Tableau, AWS, MySQL Workbench, Jupyter Notebook, Google Colab, Apache Spark, Google Cloud Platform, Kali Linux, and R Studio.</p>
+            </div>
         </div>
     </div>
+    <script>
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = Array(200).fill().map(() => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 3,
+            alpha: Math.random(),
+            dx: (Math.random() - 0.5) * 2,
+            dy: (Math.random() - 0.5) * 2
+        }));
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(particle => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = `rgba(255, 255, 255, ${particle.alpha})`;
+                ctx.fill();
+                particle.x += particle.dx;
+                particle.y += particle.dy;
+                if (particle.x < 0 || particle.x > canvas.width || particle.y < 0 || particle.y > canvas.height) {
+                    particle.x = Math.random() * canvas.width;
+                    particle.y = Math.random() * canvas.height;
+                }
+            });
+        }
+
+        setInterval(drawParticles, 30);
+    </script>
 </body>
 </html>
