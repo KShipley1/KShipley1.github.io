@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Kyle Shipley's Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,15 +37,68 @@
             margin: 20px 10px;
             cursor: pointer;
         }
+        .social-icons .tooltip {
+            visibility: hidden;
+            width: 180px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 2;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -90px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .social-icons .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(0, 0, 0, 0.7) transparent transparent transparent;
+        }
+        .social-icons a:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
         .container {
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px auto;
-            max-width: 900px;
+            padding: 80px;
+            border-radius: 25px;
+            margin: 80px auto;
+            max-width: 1300px;
+        }
+        .container a { 
+            color: #00a2e3;
+            text-decoration: none; /* Optional: Remove underline */
+        }
+        .container a:hover {
+            text-decoration: underline; /* Optional: Add underline on hover */
         }
         .section {
             margin-bottom: 50px;
+        }
+        #about-me {
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6; /* Adjust line height for better readability */
+        }
+        #about-me h1 {
+            width: 100%;
+            text-align: center; /* Center the title */
+            margin-top: 1em;
+            padding-top: 1em;
+            line-height: 1.25;
+        }
+        #about-me p {
+            margin: 20px; /* Add margin to bottom of each paragraph */
+            text-align: center;
         }
         h1, h2 {
             color: #00a2e3;
@@ -89,15 +142,24 @@
         <h1>Kyle Shipley</h1>
         <p>Maryville University Data Science Graduate 2023</p>
         <div class="social-icons">
-            <a href="mailto:Shipley.s.kyle@gmail.com"><img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email"></a>
-            <a href="https://www.linkedin.com/in/kyle-shipley-979b9a17a/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://github.com/KShipley1" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub"></a>
+            <a href="#" onclick="copyEmail('Shipley.s.kyle@gmail.com')">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email">
+                <span class="tooltip" id="tooltip-email">Shipley.s.kyle@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/kyle-shipley-979b9a17a/" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/KShipley1" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
+            </a>
         </div>
     </div>
     <div class="container">
-        <div class="section">
+        <div class="section" id="about-me">
             <h1>About Me</h1>
-            <p>I am a Technical Product Owner with extensive experience in managing data-driven solutions, optimizing business operations, and enhancing strategic insights. My expertise spans across Python, SQL, and data visualization tools like Power BI and Tableau. I am passionate about leveraging data science to drive impactful decisions and improve operational efficiency.</p>
+            <p>I am an accomplished Data Scientist and Analyst with a rich background in developing and implementing data-driven solutions. Recently, I served as a Technical Product Owner at Lithia & Driveway, where I collaborated with developers to plan and execute projects, ensuring alignment with business goals through Agile and Scrum methodologies. I designed and managed APIs to ingest multiple forms of data, translating data formats via AI to generate SQL statements for insertion into databases, and refining the AI to enhance precision.
+                <br>My career has been centered around leveraging data to drive strategic insights and operational efficiency. As a Senior Analyst at Lithia & Driveway, I initiated a comprehensive data governance program to synchronize and document cross-departmental data sources and flows. I developed and maintained data collection programs that streamlined processes, saved significant time, and created executive dashboards providing actionable insights for decision-making. Additionally, I developed a natural language processing program to summarize technician and sales rep notes, and tracked time series DMV data, producing dashboards to identify outliers for DMV processing fees and maintaining working relations in various states.
+                <br>As a Data Science Analyst, I focused on cleaning, processing, and modeling data using various statistical and computational techniques. I developed algorithms and predictive models to identify trends and patterns, created visualizations to effectively communicate insights, and collaborated with stakeholders to ensure that the data-driven solutions met business needs. Key projects included developing a Python model to automatically spot errors in manual data entries and forecasting sales for car makes and models using demographic data.</p>
         </div>
         <div class="section three-columns">
             <div class="column">
@@ -112,6 +174,8 @@
                     <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python">
                     <img src="https://img.icons8.com/ultraviolet/40/000000/mysql.png" alt="MySQL">
                     <img src="https://img.icons8.com/ultraviolet/40/000000/xbox-r.png" alt="R">
+                    <img src="https://img.icons8.com/color/48/000000/tensorflow.png" alt="TensorFlow">
+                    <img src="https://img.icons8.com/?size=100&id=aR9CXyMagKIS&format=png&color=000000" alt="Numpy">
                 </div>
                 <p>Proficient in Python, SQL, and R. Experienced in using Python libraries like NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, and TensorFlow for various projects.</p>
             </div>
@@ -119,10 +183,12 @@
                 <h2>Tools</h2>
                 <div class="tech">
                     <img src="https://img.icons8.com/nolan/64/google-cloud-platform.png" alt="Google Cloud Platform">
-                    <img src="https://img.icons8.com/nolan/64/amazon-s3.png" alt="AWS">
-                    <img src="https://img.icons8.com/ios-filled/50/000000/git.png" alt="Git">
+                    <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI">
+                    <img src="https://img.icons8.com/color/50/000000/git.png" alt="Git">
+                    <img src="https://img.icons8.com/color/48/000000/docker.png" alt="Docker">
+                    <img src="https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000" alt="VS Code">
                 </div>
-                <p>Tools I have used include Git, Tableau, AWS, MySQL Workbench, Jupyter Notebook, Google Colab, Apache Spark, Google Cloud Platform, Kali Linux, and R Studio.</p>
+                <p>Tools I have used include Git, Tableau, Power BI, Azure Cloud, MySQL Workbench, Jupyter Notebook, Google Colab, Docker, Apache Spark, Google Cloud Platform, Visual Studio Code, R Studio.</p>
             </div>
         </div>
     </div>
@@ -158,6 +224,14 @@
         }
 
         setInterval(drawParticles, 30);
+
+        function copyEmail(email) {
+            navigator.clipboard.writeText(email).then(function() {
+                alert("Email copied to clipboard: " + email);
+            }, function(err) {
+                console.error("Could not copy text: ", err);
+            });
+        }
     </script>
 </body>
 </html>
