@@ -161,6 +161,19 @@
             pointer-events: none; /* Prevent interactions */
         }
 
+        .pdf-image {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .pdf-image img {
+            border: 2px solid #00a2e3; /* Light blue border color */
+            border-radius: 15px; /* Rounded corners */
+            padding: 10px; /* Space between border and image */
+            max-width: 100%; /* Ensure it scales well on smaller screens */
+        }
+
     </style>
 </head>
 <body>
@@ -281,5 +294,8 @@
         toggleScrollArrow();
 
     </script>
+    <div class="pdf-image">
+        <img src="https://raw.githubusercontent.com/KShipley1/KShipley1.github.io/main/Student Insurance.jpg" alt="PDF Image">
+    </div>
 </body>
 </html>
