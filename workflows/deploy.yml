@@ -12,14 +12,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Display contents of index.html before replacement
-        run: cat index.html
-
       - name: Replace Google Analytics ID
-        run: sed -i "s/mykey/${{ secrets.GOOGLE_ANALYTICS_ID }}/" index.html
-
-      - name: Display contents of index.html after replacement
-        run: cat index.html
+        run: |
+          GA_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
+          sed "s/mykey/$GA_ID/g" index.html > temp_index.html
+          mv temp_index.html index.html
+          cat index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
