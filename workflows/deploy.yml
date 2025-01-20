@@ -15,8 +15,12 @@ jobs:
       - name: Replace Google Analytics ID
         run: |
           GA_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
+          echo "Replacing mykey with: $GA_ID"
           sed "s/mykey/$GA_ID/g" index.html > temp_index.html
-          mv temp_index.html index.html[_{{{CITATION{{{_2{GitHub - actions/deploy-pages: GitHub Action to publish artifacts to ...](https://github.com/actions/deploy-pages)
+          mv temp_index.html index.html
+
+      - name: Display contents of index.html after replacement
+        run: cat index.html
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
