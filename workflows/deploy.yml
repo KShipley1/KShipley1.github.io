@@ -12,10 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set Google Analytics ID as mykey
+        run: echo "mykey=${{ secrets.GOOGLE_ANALYTICS_ID }}" >> $GITHUB_ENV
+
       - name: Replace Google Analytics ID
-        run: |
-          GA_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
-          sed -i "s/mykey/$GA_ID/" index.html
+        run: sed -i "s/mykey/$mykey/" index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
