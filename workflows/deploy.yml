@@ -16,11 +16,10 @@ jobs:
         run: |
           GA_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
           sed "s/mykey/$GA_ID/g" index.html > temp_index.html
-          mv temp_index.html index.html
-          cat index.html
+          mv temp_index.html index.html[_{{{CITATION{{{_2{GitHub - actions/deploy-pages: GitHub Action to publish artifacts to ...](https://github.com/actions/deploy-pages)
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          token: ${{ secrets.GITHUB_TOKEN }}
+          folder: ./
