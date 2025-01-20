@@ -14,7 +14,8 @@ jobs:
 
       - name: Replace Google Analytics ID
         run: |
-          sed -i 's/mykey/${{ secrets.GOOGLE_ANALYTICS_ID }}/' index.html
+          GA_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
+          sed -i "s/mykey/$GA_ID/" index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
