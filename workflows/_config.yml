@@ -12,9 +12,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set Google Analytics ID in _config.yml
+      - name: Print environment variables (for debugging)
+        run: printenv
+
+      - name: Replace Google Analytics ID
         run: |
-          echo "google_analytics: '${{ secrets.GOOGLE_ANALYTICS_ID }}'" >> _config.yml
+          GA_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}
+          echo "Google Analytics ID: $GA_ID"
+          sed -i "s/GOOGLE_ANALYTICS_ID_PLACEHOLDER/$GA_ID/g" index.html
+          cat index.html
 
       - name: Build Jekyll site
         run: |
