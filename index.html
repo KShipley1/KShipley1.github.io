@@ -175,6 +175,22 @@
             max-height: 1600px;
             width: 100%;
         }
+        .iframe-container {
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 ratio */
+            position: relative;
+            background-color: #fff; /* Background color for iframe */
+            border-radius: 10px; /* Rounded corners for iframe */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for iframe */
+        }
+        .iframe-container iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
 
     </style>
     <!-- Google tag (gtag.js) -->
@@ -306,6 +322,9 @@
     </script>
     <div class="pdf-image">
         <img src="https://raw.githubusercontent.com/KShipley1/KShipley1.github.io/main/Student Insurance.jpg" alt="PDF Image">
+    </div>
+    <div class="iframe-container">
+        <iframe src="https://raw.githubusercontent.com/KShipley1/KShipley1.github.io/main/Fraud_Model.ipynb" frameborder="0"></iframe>
     </div>
 </body>
 </html>
