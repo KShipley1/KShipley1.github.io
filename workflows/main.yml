@@ -26,6 +26,7 @@ jobs:
         run: |
           bundle install
           bundle exec jekyll build
+          cp Fraud_Model.html _site/
 
       - name: Display contents of _site/index.html after build
         run: cat ./_site/index.html
